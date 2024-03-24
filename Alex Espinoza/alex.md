@@ -5,5 +5,8 @@ Soy estudiante de la prestigiosa Universidad Nacional de Ingeniería, donde esto
 
 Estoy convencido de que esta experiencia no solo enriquecerá mi formación como ingeniero, sino que también me preparará para alcanzar mis metas a largo plazo. Mi visión es establecer mi propia empresa o emprendimiento en el futuro, donde pueda aplicar los conocimientos adquiridos y, así, generar un impacto significativo tanto a nivel personal como en el ámbito profesional.
 
+- Correo personal: espinozacernaalex@gmail.com
+- Correo institucional: alex.espinoza.c@uni.pe
+- Usuario de Github: [Alexclb0](https://github.com/Alexclb0)
 
 [Más información](../../proyecto.md)
