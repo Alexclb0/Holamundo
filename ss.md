@@ -60,7 +60,7 @@ Caso de Uso #4: Registro de estado de incidencia
 |5|El sistema actualiza el registro con el nuevo ingreso|
 
 
-#### 4. Prototipos del módulo de Control
+#### 4. Prototipos del Módulo de Control
 
 |                  |                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------- |
