@@ -9,3 +9,4 @@ id_traslado, cod_tipo_incidencia,descripcion,fecha_ocurrencia,hora_ocurrencia,co
 2, 'E', 'La direccion asignada presenta demasiado tráfico', '2024-05-12','04:53:21','P'
 1, 'B', 'El sello del paquete está dañado', '2024-04-30','04:53:21','P'
 1, 'A', 'Ocurrió un accidente en la carretera que retrasó la entrega del pedido', '2024-05-02','04:53:21','S'
+
