@@ -122,7 +122,7 @@ Caso de Uso #4: Registro de estado de incidencia
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/7e011093-b923-4e2f-bcd7-b79752030cca">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/5468b073-0253-46e4-9c92-a86ee9ddae30">
       </td>
    </tr>
    <tr>
@@ -140,7 +140,6 @@ SELECT
     lt.descripcion AS "Tipo de Licencia",
     t.fecha_vencimiento_licencia AS "Fecha de Vencimiento de Licencia",
     t.fecha_ultimo_traslado AS "Fecha Último Traslado",
-    t.hora_ultimo_traslado AS "Hora Último Traslado",
     te.descripcion AS "Estado del Conductor"
 FROM 
     transportista t
@@ -163,7 +162,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/bd878778-adab-451b-bc31-8941ec9f724d">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/a36b2b4b-8654-44ec-a3ba-df7ff85c4d1e">
       </td>
    </tr>
    <tr>
@@ -175,7 +174,7 @@ JOIN
 ### Botón Estado: 
 El botón sirve para que el administrador pueda cambiar el estado de disponibilidad del conductor  que puede ser Disponible, No Disponible y Cuarentena.
 ``` sql
-UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_estado_transportista = 2 AND cod_transportista = <2>
+UPDATE Transportista SET cod_estado_transportista = <1> WHERE cod_estado_transportista = 2 AND cod_transportista = <2>
 ```
 
 ### Caso 3
@@ -191,7 +190,7 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_estado_transportis
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/60d1f8e1-606a-4945-9a68-7de18b34573a">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/41c637e5-bdc6-4ed0-8dd5-562eeef707cb">
       </td>
    </tr>
    <tr>
@@ -204,15 +203,13 @@ UPDATE Conductor SET cod_estado_transportista = <1> WHERE cod_estado_transportis
 Se mostrará en pantalla la lista de todos los vehículos para poder registrar su disponibilidad en base a los datos correspondiente a cada uno.
 ``` sql
 SELECT 
-    v.cod_vehiculo AS "Código del Vehículo",
-    v.año_fabricacion AS "Año de Fabricación",
-    v.fecha_ultimo_mantenimiento AS "Fecha de Último Mantenimiento",
+    v.cod_vehiculo AS "Código Vehículo",
+    v.año_fabricacion AS "Año Fabricación",
+    v.fecha_ultimo_mantenimiento AS "Fecha Último Mantenimiento",
     v.capacidad_carga AS "Capacidad de Carga",
-    vm.descripcion AS "Modelo",
+    vm.descripcion AS "Marca",
     v.placa AS "Placa",
-    pt.tipo_pedido AS "Tipo de Pedido",
     v.fecha_ultimo_viaje AS "Fecha Último Viaje",
-    v.hora_ultimo_viaje AS "Hora Último Viaje",
     ve.descripcion AS "Estado del Vehículo"
 FROM 
     vehiculo v
@@ -220,8 +217,6 @@ JOIN
     vehiculo_modelo vm ON v.cod_vehiculo_modelo = vm.cod_vehiculo_modelo
 JOIN 
     vehiculo_estado ve ON v.cod_vehiculo_estado = ve.cod_vehiculo_estado
-JOIN 
-    pedido_tipo pt ON v.cod_pedido_tipo = pt.cod_pedido_tipo;
 
 ```
 
@@ -238,7 +233,7 @@ JOIN
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/667ef75e-8da5-4687-8098-1134ab6a3791">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/edd1ee65-2adb-45c4-9058-8d5c27c0e206">
       </td>
    </tr>
    <tr>
@@ -267,10 +262,10 @@ UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_estado_vehiculo = 2 AND
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/df6a3f0e-8aa9-4057-8a2e-e6883df7b452">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/ba0aba03-5d69-4d5c-8bce-a7fb805b1b7d">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/4555d051-cfc8-4429-b148-a9baeae1fc67">
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/53e66fca-232a-4d5f-b750-3e882732056b">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/a54903b4-1a59-4620-bf74-38885420d54e">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/7721353f-20f2-41e9-a837-bc1c2005fd9c">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/617f5b07-1d3c-4370-ab8c-39bd08ad88d3">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/e95d453b-0427-48ee-8a46-e54368231569">
       </td>
    </tr>
    <tr>
@@ -280,37 +275,51 @@ UPDATE Vehículo SET cod_estado_vehiculo = <1> WHERE cod_estado_vehiculo = 2 AND
 
 ## Evento:
 ### Nueva incidencia: 
-El administrador podrá registrar una nueva incidencia primero seleccionando el tipo de incidencia que se presenta, dependiendo de la opción del tipo de incidencia que elija le corresponderá un tipo de procedimiento específico basado en un tipo de norma respectivamente.
-### Opción 1
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con retraso en la entrega, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo A; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia, <6>, fecha_ocurrencia , hora_ocurrencia , <1>, <7> ,<12>)
+El administrador podrá registrar una nueva incidencia seleccionando primero el tipo de incidencia que se presenta. Dependiendo de la opción elegida, se determinará un tipo de procedimiento específico, cuya selección dependerá del empleado y del contexto de la situación. Este procedimiento elegido se basará en un tipo de norma aplicable.
 
-```
-### Opción 2
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con errores en el etiquetado o embalaje, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo B; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <2>, <8> ,<12>)
+1. Se llenará la lista de tipos de incidencia según el contexto que se presentase.
 
+``` sql 
+SELECT * FROM incidencia_tipo;
 ```
-### Opción 3
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con fallas en la documentación, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo C; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <3>, <9> ,<13>)
 
-```
-### Opción 4
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con problemas mecánicos del vehículo, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo D; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <4>, <10> ,<14>)
+2. Se seleccionará el tipo de procedimiento a efectuar en base a determinado tipo de incidencia. 
 
+``` sql 
+SELECT * FROM procedimiento_tipo;
 ```
-### Opción 5
-Al elegirse esta opción, se está eligiendo un tipo de incidencia relacionado con error en la asignación de la ruta, por ello el tipo de procedimiento también debe ser correspondiente al tipo de incidencia, es decir de tipo E; análogamente sucede con el tipo de norma en el cual se basa el procedimiento para posteriormente darle a registrar. 
-``` sql
-INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurrencia , <5>, <11> ,<15>)
 
+3. Se seleccionará el tipo de norma en las cuales se basa cada procedimiento.
+
+``` sql 
+SELECT * FROM norma_tipo;
 ```
+
+4. Al apretar el botón Registrar se actualiza el código del tipo de incidencia, el tipo de procedimiento, la descripción detallada de la incidencia, tipo de norma, fecha de ocurrencia, hora de ocurrencia, tiempo estimado de procedimiento (en horas).
+
+``` sql 
+UPDATE incidencia
+SET cod_tipo_incidencia = <1>, cod_tipo_procedimiento =<2>, descripcion = <3>, cod_norma_tipo = <4>, fecha_ocurrencia=<5>, hora_ocurrencia=<6>, id_traslado=<7>, tiempo_estimado=<8> 
+WHERE incidencia.cod_incidencia = <9>
+```
+Donde <1> es el código del tipo de incidencia escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <2> es el código del tipo de procedimiento escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <3> es la descripción a detalle de la incidencia, escrita por el empleado.
+
+Donde <4> es el código del tipo de norma escogido por el empleado, tomando en cuenta el contexto presentado. 
+
+Donde <5> es la fecha en la que ocurrió la incidencia, registrada por el empleado. 
+
+Donde <6> es la hora exacta en la que ocurrió la incidencia, registrada por el empleado. 
+
+Donde <7> es el código del traslado, en el cual se presentó determinada incidencia. 
+
+Donde <8> es el tiempo estimado en horas de la duración del procedimiento.
+
+Donde <9> es el código de la incidencia actual. 
+
 
 ### Caso 6
 <table>
@@ -325,7 +334,7 @@ INSERT INTO incidencia VALUES (cod_incidencia,<6>, fecha_ocurrencia , hora_ocurr
    <tr>
       <td>Imagen interfaz</td>
       <td>
-         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/233260db-d6b7-44d9-867c-23bcf10d1257">
+         <img src="https://github.com/Alexclb0/Holamundo/assets/164266999/50551045-f432-4e68-aa76-8895af85cf41">
       </td>
    </tr>
    <tr>
@@ -339,12 +348,12 @@ Se mostrará en pantalla la lista de todas las incidencias para poder registrar 
 
 ``` sql
 SELECT 
-    i.cod_incidencia AS "Código de Incidencia",
-    i.id_traslado AS "Código de Traslado",
-    it.descripcion AS "Descripción del Tipo de Incidencia",
+    i.cod_incidencia AS "Código Incidencia",
+    i.id_traslado AS "Código Traslado",
+    it.descripcion AS "Tipo de Incidencia",
     i.fecha_ocurrencia AS "Fecha de Ocurrencia",
     i.hora_ocurrencia AS "Hora de Ocurrencia",
-    i.cod_estado_incidencia AS "Código de Estado de Incidencia"
+    i.cod_estado_incidencia AS "Estado Incidencia"
 FROM 
     incidencia i
 JOIN 
