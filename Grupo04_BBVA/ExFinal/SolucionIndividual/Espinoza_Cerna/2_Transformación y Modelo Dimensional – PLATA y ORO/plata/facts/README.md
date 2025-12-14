@@ -1,6 +1,5 @@
-# Tabla de Hechos
+# Tabla de Hechos ...
 
-## Tabla de hechos: `...`
 
 | Campo | Descripción |
 |------|------------|
