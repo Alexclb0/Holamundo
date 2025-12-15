@@ -1,2 +1,2 @@
-# Sustentación de Diseño y Visualización
+# Sustentación de Diseño y Visualización del Dashboard (pate estética)
 .....
