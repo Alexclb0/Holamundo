@@ -9,3 +9,4 @@ docs/                     # Evidencias globales del proyecto
 └── dashboards/           # Capturas y justificación de dashboards y KPIs
 ```
 
+IMPORTANTE: Registrará evidencias del trabajo realizado (asegúrese de mostrar fecha y hora).
