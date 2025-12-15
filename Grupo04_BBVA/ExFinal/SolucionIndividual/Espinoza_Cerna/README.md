@@ -22,24 +22,13 @@ PC3/
 │   │   ├── dimensions/       # tablas dimensión (modelo estrella)
 │   │   ├── facts/            # tablas de hechos
 │   │   └── scripts/
-│   │       ├── build_dims.py
-│   │       ├── build_facts.py
-│   │       └── etl_plata.py
-│   │
 │   └── oro/
 │       ├── kpis/             # KPIs finales para consumo analítico
-│       └── scripts/
-│           ├── kpi_core.py
-│           └── etl_oro.py
-│
+│       └── scripts/       
+│   
 ├── 3_Visualización de KPIs – Dashboards/
 │   ├── dashboards/
-│   │   ├── dashboard_1/
-│   │   └── dashboard_2/
-│   │
 │   └── scripts/
-│       ├── dashboard_1.py
-│       └── dashboard_2.py
 │
 ├── docs/                     # Evidencias globales del proyecto
 │   ├── cli_ingestion/        # capturas de carga por CLI
